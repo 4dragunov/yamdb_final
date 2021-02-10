@@ -27,7 +27,11 @@ jobs:
         pip install docker
 
     - name: Lint with flake8
-      run: flake8 .
+      run: flake8 --extend-exclude=
+                            ./tests,
+                            ./users/migrations/,
+                            ./titles/migrations/,
+                            ./reviews/migrations/
 
     - name: Test with pytest
       run: pytest tests.py
