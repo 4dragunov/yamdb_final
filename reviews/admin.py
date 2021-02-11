@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import Comment, Review
 
+
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ("id", "text", "author", "score", "pub_date")
     search_fields = ("text",)
@@ -18,5 +19,3 @@ class CommentAdmin(admin.ModelAdmin):
 
 admin.site.register(Review, ReviewAdmin)
 admin.site.register(Comment, CommentAdmin)
-
-
