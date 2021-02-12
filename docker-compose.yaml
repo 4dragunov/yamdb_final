@@ -1,9 +1,10 @@
 # версия docker-compose
 version: '3.8'
 
-# имя директории для хранения данных
 volumes:
   postgres_data:
+  static_volume:
+
 
 # имена и описания контейнеров, которые должны быть развёрнуты
 services:
@@ -18,12 +19,31 @@ services:
     env_file:
       - ./.env
   web:
-    build: .
+    image: 4dragunov/yamdb_final:latest
     restart: always
-    command: gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
-    ports:
-      - "8000:8000"
+    expose:
+      - 8000
     depends_on:
       - db
     env_file:
       - ./.env
+    volumes:
+      - static_volume:/code/static
+
+  nginx:
+    image: nginx:1.19.6
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - type: volume
+        source: static_volume
+        target: /code/static
+      - type: bind
+        source: ./nginx
+        target: /etc/nginx/conf.d
+
+    depends_on:
+      - web
+
+# имя директории для хранения данных

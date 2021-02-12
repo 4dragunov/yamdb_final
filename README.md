@@ -1,4 +1,5 @@
 #
+https://github.com/4dragunov/yamdb_final/workflows/yambd-workflow/badge.svg
 ### Описание проекта
 Проект YaMDb собирает отзывы пользователей на произведения. Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 Приложение написано на основе `fullREST` архитектуры на фреймворке `django-rest-framework`. База данных `postgresssql`.
