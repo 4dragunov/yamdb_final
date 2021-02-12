@@ -63,8 +63,8 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          source: "docker-compose.yaml, nginx/default.conf"
-          target: "~/app/"
+          source: "docker-compose.yaml, nginx/default.conf, Dockerfile"
+          target: "yamdb_final"
           script: |
             sudo docker pull 4dragunov/yamdb_final:latest
             sudo docker-compose up --force-recreate --no-deps -d web
