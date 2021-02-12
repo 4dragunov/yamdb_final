@@ -30,11 +30,6 @@ services:
     volumes:
       - static_volume:/code/static
 
-    command: >
-      bash -c "python manage.py makemigrations
-      && python manage.py makemigrations api
-      && python manage.py migrate
-      && gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000"
 
   nginx:
     image: nginx:1.19.6
