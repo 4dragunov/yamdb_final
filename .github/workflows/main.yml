@@ -66,6 +66,7 @@ jobs:
           source: "docker-compose.yaml, nginx/default.conf, Dockerfile"
           target: "yamdb_final"
           script: |
+            cd yamdb_final
             sudo docker pull 4dragunov/yamdb_final
             sudo docker-compose up --force-recreate --no-deps -d web
             sudo docker image prune -f
