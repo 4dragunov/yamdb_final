@@ -66,9 +66,9 @@ jobs:
           source: "docker-compose.yaml, nginx/default.conf"
           target: "~/app/"
           script: |
-            sudo docker pull 4dragunov/yamdb_final
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 4dragunov/yamdb_final
+            sudo docker pull 4dragunov/yamdb_final:latest
+            sudo docker-compose up --force-recreate --no-deps -d web
+            sudo docker image prune -f
 
   send_message:
     runs-on: ubuntu-latest
