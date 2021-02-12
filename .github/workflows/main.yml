@@ -66,7 +66,7 @@ jobs:
           source: "docker-compose.yaml, nginx/default.conf"
           target: "yamdb_final"
           script: |
-            sudo docker pull 4dragunov/yamdb_final:latest
+            sudo docker pull 4dragunov/yamdb_final
             sudo docker-compose down -v
             sudo docker image prune -f
             sudo docker-compose up -d
