@@ -67,8 +67,6 @@ jobs:
           target: "yamdb_final"
           script: |
             sudo docker pull 4dragunov/yamdb_final:latest
-#            sudo docker stop $(sudo docker ps -a -q)
-#            sudo docker-compose up --build -d
             sudo docker-compose up --force-recreate --no-deps -d web
             sudo docker image prune -f
 
