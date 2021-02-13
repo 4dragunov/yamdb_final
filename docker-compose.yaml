@@ -38,12 +38,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - type: volume
-        source: static_volume
-        target: /code/static
-      - type: bind
-        source: ./nginx
-        target: /etc/nginx/conf.d
+      - static_volume:/code/static
+      - ./nginx:/etc/nginx/conf.d
     depends_on:
       - web
 
