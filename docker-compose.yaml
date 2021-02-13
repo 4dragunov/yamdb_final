@@ -43,6 +43,5 @@ services:
       - type: bind
         source: ./nginx
         target: /etc/nginx/conf.d
-
     depends_on:
       - web
