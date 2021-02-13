@@ -45,3 +45,4 @@ services:
         target: /etc/nginx/conf.d
     depends_on:
       - web
+
