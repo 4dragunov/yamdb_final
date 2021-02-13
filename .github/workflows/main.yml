@@ -74,7 +74,7 @@ jobs:
             cd yamdb_final
             sudo mv env .env
             sudo docker pull 4dragunov/yamdb_final:latest
-            sudo docker-compose up --force-recreate --no-deps -d web
+            sudo docker-compose up --force-recreate --no-deps --no-cache -d web
             sudo docker image prune -f
 
 
