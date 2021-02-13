@@ -1,8 +1,6 @@
 name: yambd-workflow
 
-# Controls when the action will run. 
 on: [push]
-  # Triggers the workflow on push or pull request events but only for the master branch
 jobs:
   tests:
     runs-on: ubuntu-latest
