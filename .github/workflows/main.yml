@@ -76,6 +76,7 @@ jobs:
             sudo docker pull 4dragunov/yamdb_final:latest
             sudo docker-compose up --force-recreate --no-deps -d web
             sudo docker image prune -f
+            sudo docker-compose up
 
 
   send_message:
