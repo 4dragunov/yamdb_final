@@ -59,8 +59,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          source: docker-compose.yaml, env, nginx, Dockerfile, entrypoint
-          .sh, redoc.yaml
+          source: docker-compose.yaml, env, nginx, Dockerfile, entrypoint.sh
           target: yamdb_final
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
